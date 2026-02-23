@@ -1,0 +1,17 @@
+services:
+  monitor:
+    build: .
+    image: kazever/kazever_monitor:v1.1
+    container_name: system_monitor
+    network_mode: host
+    pid: "host"
+    environment:
+      - PROCFS_PATH=/host/proc
+      - MONITOR_PASSWORD=123456123456
+      - MONITOR_SECRET_KEY=averylongstringtomakesuretheserviceissafe
+    volumes:
+      - ./back/data:/app/back/data
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /etc/os-release:/host/etc/os-release:ro
+    restart: always
