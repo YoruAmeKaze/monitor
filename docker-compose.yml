@@ -7,8 +7,8 @@ services:
     pid: "host"
     environment:
       - PROCFS_PATH=/host/proc
-      - MONITOR_PASSWORD=123456123456
-      - MONITOR_SECRET_KEY=averylongstringtomakesuretheserviceissafe
+      - MONITOR_PASSWORD=YourOwnPassword
+      - MONITOR_SECRET_KEY=A_LongString_to_MakeSure_the_Service_is_Safe
     volumes:
       - ./back/data:/app/back/data
       - /proc:/host/proc:ro
