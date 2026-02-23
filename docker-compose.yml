@@ -1,7 +1,7 @@
 services:
   monitor:
     build: .
-    image: kazever/kazever_monitor:v1.1
+    image: kazever/kazever_monitor:latest
     container_name: system_monitor
     network_mode: host
     pid: "host"
